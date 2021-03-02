@@ -1,0 +1,17 @@
+title: Lollipop
+
+email: l6p.io@hotmail.com
+
+description: 基于K8s的性能测试工具
+
+url: "https://l6p.io"
+
+baseurl: "/cn"
+
+remote_theme: rundocs/jekyll-rtd-theme
+
+readme_index:
+  with_frontmatter: true
+
+google:
+  gtag: "G-M645ESKSD0"
