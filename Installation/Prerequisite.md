@@ -45,50 +45,46 @@ kubectl create ns l6p-system
 kubectl create ns l6p-space
 ```
 
-## Installing MongoDB
+## 安装 MongoDB
 
-Download or clone [this project](https://github.com/l6p/helm){:target="_blank"} and go to the `utils/mongodb` directory.
-Please change the **values.yaml** file according to your requirements, and run the command:
+Lollipop 使用 MongoDB 存储数据，如果没有安装 MongoDB 请首先[下载这个项目](https://github.com/l6p/helm){:target="_blank"}，然后进入 `utils/mongodb` 目录。
+
+请首先按照您自身的要求更改其中的 **values.yaml** 文件中的设置，然后在当前目录中运行下面的命令进行安装：
 
 ```shell
 helm repo add bitnami https://charts.bitnami.com/bitnami
 helm install mongodb -n l6p-system -f ./values.yaml bitnami/mongodb
 ```
 
-## Installing Kafka
+## 安装 Kafka
 
-Lollipop uses Kafka as a message queue to store the logs generated during testing.
+Lollipop 使用 Kafka 作为消息队列来临时存储性能测试时临时产生的日志，如果没有安装请首先[下载这个项目](https://github.com/l6p/helm){:target="_blank"}，然后进入 `utils/kafka` 目录。
 
-Download or clone [this project](https://github.com/l6p/helm){:target="_blank"} and go to the `utils/kafka` directory.
-Please change the **values.yaml** file according to your requirements, and run the command:
+请首先按照您自身的要求更改其中的 **values.yaml** 文件中的设置，然后在当前目录中运行下面的命令进行安装：
 
 ```shell
 helm repo add bitnami https://charts.bitnami.com/bitnami
 helm install kafka -n l6p-system -f ./values.yaml bitnami/kafka
 ```
 
-## Installing K8s Ingress Controller
+## 安装 K8s Ingress Controller
 
-```warning
-Ignore this step if your K8s cluster already has an Ingress controller.
-```
+Lollipop 提供了基于 Web 的管理平台。如果在本地使用管理平台就需要安装 Ingress Controller。
 
-Lollipop provides a web-based management platform. In order to use this feature, the Ingress controller must be installed on k8s.
-
-First create a K8s namespace for NGINX Ingress controller:
+首先要为 Ingress controller 创建一个 K8s 的命名空间：
 
 ```shell
 kubectl create ns ingress-nginx
 ```
 
-NGINX Ingress controller can be installed via Helm:
+使用下面的命令来安装 NGINX Ingress controller：
 
 ```shell
 helm repo add ingress-nginx https://kubernetes.github.io/ingress-nginx/
 helm install ingress-nginx ingress-nginx/ingress-nginx -n ingress-nginx
 ```
 
-To check if the ingress controller pods have started, run the following command:
+使用下面的命令来检查是否启动成功：
 
 ```shell
 kubectl get pods -n ingress-nginx -l app.kubernetes.io/name=ingress-nginx --watch

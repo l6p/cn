@@ -1,54 +1,53 @@
 ---
 sort: 2
-title: Installing Lollipop
+title: 安装 Lollipop
 ---
 
-# Installing Lollipop
+# 安装 Lollipop
 
-Download or clone [this project](https://github.com/l6p/helm){:target="_blank"} and go to the `charts/lollipop` directory.
-Open and edit the **values.yaml** file and modify the configuration as required.
+请首先[下载这个项目](https://github.com/l6p/helm){:target="_blank"}，然后进入 `charts/lollipop` 目录.
 
-| Parameter | Description | Default |
+请首先按照您自身的要求更改其中的 **values.yaml** 文件中的设置，下面是对于配置信息的描述：
+
+| 参数 | 描述 | 默认值 |
 | --------- | ----------- | ------- |
-| global.mongodb.host | MongoDB address and port in the K8s cluster | mongodb.l6p-system.svc.cluster.local:27017 |
-| global.mongodb.user | MongoDB username | root |
-| global.mongodb.pass | MongoDB password | rootpassword |
-| global.kafka.endpoint | Kafka endpoint | kafka.l6p-system.svc.cluster.local:9092 |
-| global.kafka.topic | Kafka topic | l6p.log |
-| server.storageClass | storage class of backing PVC | hostpath |
-| server.service.port | port of the API server | 80 |
-| server.ingress.hosts[0].host | hostname of the API server | local.l6p.io |
-| server.ingress.hosts[0].path | path within the API url structure | "/api/v1" |
-| web.apiBaseUrl | base URL of API | "http://local.l6p.io/api/v1" |
-| web.service.port | port of the Web server | 80 |
-| web.ingress.hosts[0].host | hostname of the Web server | local.l6p.io |
-| web.ingress.hosts[0].path | root path of the Web server | "/" |
+| global.mongodb.host | MongoDB 在 K8s 集群中的地址和端口 | mongodb.l6p-system.svc.cluster.local:27017 |
+| global.mongodb.user | MongoDB 的用户名 | root |
+| global.mongodb.pass | MongoDB 的密码 | rootpassword |
+| global.kafka.endpoint | Kafka 在集群中的地址和端口 | kafka.l6p-system.svc.cluster.local:9092 |
+| global.kafka.topic | Kafka 的主题名称 | l6p.log |
+| server.storageClass | PVC 的存储类型 | hostpath |
+| server.service.port | API 服务的端口 | 80 |
+| server.ingress.hosts[0].host | API 服务的域名 | local.l6p.io |
+| server.ingress.hosts[0].path | API 的基础 URL | "/api/v1" |
+| web.apiBaseUrl | API 服务的基础 URL | "http://local.l6p.io/api/v1" |
+| web.service.port | WEB 服务的端口 | 80 |
+| web.ingress.hosts[0].host | WEB 服务的域名 | local.l6p.io |
+| web.ingress.hosts[0].path | WEB 服务的根路径 | "/" |
 
 ```warning
-Please change `local.l6p.io` in the configuration to your actual domain name, such as `l6p.mycompany.com`, 
-and resolve the domain name to the external IP address of Ingress Controller. The external IP address of 
-Ingress Controller can be retrieved by using the command `kubectl get service -n ingress-nginx`. 
-If you are only running on desktop, you can add a record in `/etc/hosts` to point `local.l6p.io` to the 
-external IP address of Ingress Controller.
+请按照实际需要将 `local.l6p.io` 更改为您部署和使用的实际域名，例如 `l6p.mycompany.com`，
+并且要把域名指向 Ingress Controller 的外网IP。Ingress Controller 的外网IP可通过 `kubectl get service -n ingress-nginx` 命令
+获得。如果运行在个人笔记本上，可在本机的 `/etc/hosts` 文件中将 `local.l6p.io` 指向 Ingress Controller 的外网IP。
 ```
 
-After modifying the configuration, please go back to the **root directory** and run:
+在更改完配置后请回到**根目录**然后运行：
 
 ```shell
 helm install l6p ./charts/lollipop -n l6p-system
 ```
 
-To check if the Lollipop pods have started, run the following command:
+可以使用下面的命令来查看 Pod 的启动情况：
 
 ```shell
 kubectl get pods -n l6p-system --watch
 ```
 
-When all pods are running and ready it means that the system has installed successfully.
+当所有 Pod 成功启动以后部署完毕。
 
-## Login Lollipop
+## 登陆 Lollipop
 
-Open the Chrome browser and access the home page of the Lollipop web console.
-For example, according to the default configuration, the home page address is `http://local.l6p.io`.
+打开 Lollipop Web 控制台的页面，例如按照默认的配置，控制台的地址为 `http://local.l6p.io`。
 
-By default, the system will create an administrator account with the username `admin` and the password `password`.
+默认的管理员的用户名为 `admin` 密码为 `password`。
+
