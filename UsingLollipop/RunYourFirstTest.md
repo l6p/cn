@@ -128,5 +128,5 @@ zip -r script.zip ./script
 
 ## Further Reading
 
-* [进一步了解如何创建测试用例](/ScriptGuides)
-* [进一步了解关于性能测试的细节](/TestingGuides)
+* [进一步了解如何创建测试用例](ScriptGuides)
+* [进一步了解关于性能测试的细节](TestingGuides)
