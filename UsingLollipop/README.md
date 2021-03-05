@@ -2,6 +2,6 @@
 sort: 2
 ---
 
-# Using Lollipop
+# 使用 Lollipop
 
 {% include list.liquid all=true %}

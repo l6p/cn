@@ -1,13 +1,13 @@
 ---
 sort: 1
-title: Run Your First Test
+title: 运行您的第一个测试
 ---
 
-# Run Your First Test
+# 运行您的第一个测试
 
-## Write Your First Test Case
+## 创建您的第一个测试脚本
 
-The first step is to create a new directory `script`, and perform the following actions:
+首先创建一个新的文件夹，例如命名成 `script`，然后执行下面的操作：
 
 ```shell
 mkdir script
@@ -16,7 +16,7 @@ go mod init script
 go get github.com/l6p/utils
 ```
 
-Copy the code below, paste it into your favourite editor, and save it as `main.go` in this folder:
+然后把下面的代码拷贝到文本编辑器中，命名成 `main.go` 并保存在新创建的文件夹下：
 
 ```go
 package main
@@ -40,42 +40,44 @@ func Export() map[string]interface{} {
 }
 ```
 
-Compress this folder into a zip file:
+把新创建的 `script` 文件夹压缩成一个 zip 文件：
 
 ```shell
 zip -r script.zip ./script
 ```
 
-## Upload Script
+## 上传测试脚本
 
-Choose **Script** from the left menu and click **UPLOAD** button and fill in the form:
+在 Lollipop Web 管理平台的左侧菜单上选择 **Script** 菜单，并点击 **UPLOAD** 按钮：
+
+在弹出对话框中输入如下信息：
 
 ```text
-| Item    | Value                             |
+| 表单项目 | 输入值                             |
 |---------|-----------------------------------|
 | Name    | script                            |
 | Version | 0.1.0                             |
 | File    | Choose the "script.zip" to upload |
 ```
 
-Waiting for a moment until script's status is ready.
+输入完毕并确认后等待一会，等上传的测试脚本变为 `ready` 的状态。
 
-## Create A Test Plan
+## 创建测试计划
 
-Choose **Plan** from the left menu and click **CREATE** button and fill in the form:
+在 Lollipop Web 管理平台的左侧菜单上选择 **Plan** 菜单，并点击 **CREATE** 按钮：
 
 ```text
-| Item           | Value  |
+| 表单项目        | 输入值  |
 |----------------|--------|
 | Name           | plan   |
 | Script Name    | script |
 | Script Version | 0.1.0  |
 ```
 
-Click **NEXT** and continue to fill in the form:
+点击 **NEXT** 按钮并继续输入下面的信息：
 
 ```text
-| Item         | Value      |
+| 表单项目      | 输入值      |
 |--------------|------------|
 | VUser Type   | tester     |
 | VUser Weight | 100%       |
@@ -84,14 +86,14 @@ Click **NEXT** and continue to fill in the form:
 | Case Weight  | 100%       |
 ```
 
-Click **DONE** and **SAVE**
+点击 **DONE** 和 **SAVE**
 
-## Run Test
+## 运行测试
 
-Choose **Test** from the left menu and click **CREATE** button and fill in the form:
+在 Lollipop Web 管理平台的左侧菜单上选择 **Test** 菜单，并点击 **CREATE** 按钮：
 
 ```text
-| Item     | Value |
+| 表单项目  | 输入值 |
 |----------|-------|
 | Name     | test  |
 | Plan     | plan  |
@@ -99,20 +101,20 @@ Choose **Test** from the left menu and click **CREATE** button and fill in the f
 | Duration | 1m    |
 ```
 
-Click **NEXT** and continue to fill in the form:
+点击 **NEXT** 并继续在对话框里填写：
 
 ```text
-| Item              | Value |
+| 表单项目           | 输入值 |
 |-------------------|-------|
 | Total Workers     | 1     |
 | VUsers per Worker | 1     |
 ```
 
-Click **NEXT** and **RUN**
+点击 **NEXT** 和 **RUN**
 
-## Check Report
+## 查看测试报表
 
-While the test is running you can slide the mouse over the right side trigger points of the test to slide out the functional buttons.
+将鼠标移动到测试项目右侧的功能区展开选项：
 
 <style>
     img[alt=pic00000001] { 
@@ -122,10 +124,9 @@ While the test is running you can slide the mouse over the right side trigger po
 </style>
 ![pic00000001](/assets/images/pic00000001.png)
 
-Then click the **Dashboard** button to view the test report.
-Or even simpler, just click on the test item in the list to view the test report.
+点击 **Dashboard** 按钮来查看测试报表。或者直接点击测试项目本身也可以查看测试报表。
 
 ## Further Reading
 
-* [Learn more about creating test scripts](/ScriptGuides)
-* [Learn more about the test details](/TestingGuides)
+* [进一步了解如何创建测试用例](/ScriptGuides)
+* [进一步了解关于性能测试的细节](/TestingGuides)

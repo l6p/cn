@@ -47,7 +47,7 @@ kubectl get pods -n l6p-system --watch
 
 ## 登陆 Lollipop
 
-打开 Lollipop Web 控制台的页面，例如按照默认的配置，控制台的地址为 `http://local.l6p.io`。
+打开 Lollipop Web 管理平台的页面，例如按照默认的配置，管理平台的地址为 `http://local.l6p.io`。
 
 默认的管理员的用户名为 `admin` 密码为 `password`。
 
