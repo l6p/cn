@@ -28,12 +28,12 @@ Lollipop提供独立的、基于Flink的数据分析模块提供实时数据统�
 
 ## 安装说明
 
-- [预先的准备](Installation/Prerequisite.html)
-- [安装 Lollipop](Installation/InstallingLollipop.html)
+- [预先的准备](/cn/Installation/Prerequisite.html)
+- [安装 Lollipop](/cn/Installation/InstallingLollipop.html)
 
 ## 使用 Lollipop
 
-- [运行您的第一个测试](UsingLollipop/RunYourFirstTest.html)
+- [运行您的第一个测试](/cn/UsingLollipop/RunYourFirstTest.html)
 - [Using Customized Test Data](/UsingLollipop/UsingCustomizedTestData.html)
 - [View Logs](/UsingLollipop/ViewLogs.html)
 - [View Test Reports](/UsingLollipop/ViewTestReports.html)

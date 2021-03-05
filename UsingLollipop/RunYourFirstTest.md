@@ -126,7 +126,7 @@ zip -r script.zip ./script
 
 点击 **Dashboard** 按钮来查看测试报表。或者直接点击测试项目本身也可以查看测试报表。
 
-## Further Reading
+## 进一步阅读
 
-* [进一步了解如何创建测试用例](ScriptGuides)
-* [进一步了解关于性能测试的细节](TestingGuides)
+* [进一步了解如何创建测试用例](/cn/ScriptGuides)
+* [进一步了解关于性能测试的细节](/cn/TestingGuides)
