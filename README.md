@@ -52,6 +52,6 @@ Lollipop提供独立的、基于Flink的数据分析模块提供实时数据统�
 - [使用测试上下文](/cn/ScriptGuides/UsingContext.html)
 - [使用 Chrome 引擎](/cn/ScriptGuides/UsingChrome.html)
 
-## Utilities
+## 工具库
 
-- [JSON Utility](/Utilities/JsonUtility/)
+- [JSON 工具](/cn/Utilities/JsonUtility)

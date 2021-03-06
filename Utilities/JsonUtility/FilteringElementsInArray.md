@@ -1,11 +1,11 @@
 ---
 sort: 3
-title: Filtering Elements In Array
+title: 在数组中过滤数据
 ---
 
-# Filtering Elements In Array
+# 在数组中过滤数据
 
-Based on the following JSON data:
+基于下面的 JSON 数据：
 
 ```go
 d := json.D(`
@@ -24,7 +24,7 @@ d := json.D(`
 `)
 ```
 
-If you want to find a record with key equal to `k2` and read the value of `value`, you can do this:
+如果想要获取键值为 `k2` 的数据项并且读取 `value` 字段的值，可以这样做：
 
 ```go
 d.Filter("records", func(data *json.Data) bool {
@@ -32,5 +32,5 @@ d.Filter("records", func(data *json.Data) bool {
 }).GetString("records[0].value")
 ```
 
-In the above example, after the records are filtered, there is only one record that matches the criteria, 
-so you can locate the record by `records[0]` and get the value of the record by `.value`.
+在上面的示例中，数组的数据在过滤之后只剩下一条数据符合条件。
+所以可以用 `records[0]` 定位到这条数据，然后用 `.value` 作为路径来读取 value 字段的数值。

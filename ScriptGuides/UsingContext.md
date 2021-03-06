@@ -16,7 +16,7 @@ type Context struct {
 }
 ```
 
-在 **Export** 函数输出的 **map** 中的键值 `context` 是**保留字**，用于向系统输出测试上下文的初始值。
+在 **Export** 方法输出的 **map** 中的键值 `context` 是**保留字**，用于向系统输出测试上下文的初始值。
 
 ```go
 func Export() map[string]interface{} {

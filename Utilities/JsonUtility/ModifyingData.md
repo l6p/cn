@@ -1,12 +1,11 @@
 ---
 sort: 4
-title: Modifying Data
+title: 更改数据
 ---
 
-# Modifying Data
+# 更改数据
 
-`json.Data` provides the ability to modify its encapsulated JSON data. 
-For example, based on the following JSON data:
+`json.Data` 对象提供了修改它所封装的数据的功能，例如基于下面的 JSON 数据：
 
 ```go
 d := json.D(`
@@ -20,16 +19,16 @@ d := json.D(`
 `)
 ```
 
-## Setting New Value
+## 重新赋值
 
-When the following code is executed:
+当下面代码执行以后：
 
 ```go
 d.SetString("key1", "foo")
 d.SetInt("key2.key21", 10)
 ```
 
-The JSON value will change to:
+示例中的 JSON 数据会改变成：
 
 ```json
 {
@@ -41,15 +40,15 @@ The JSON value will change to:
 }
 ```
 
-## Appending Value To Array
+## 在数组后增加数据
 
-Further, execute the following code:
+进一步的执行下面代码后：
 
 ```go
 d.AppendInt("key3", 30)
 ```
 
-The JSON value will change to:
+JSON 数据会进一步改变成：
 
 ```json
 {
@@ -61,15 +60,15 @@ The JSON value will change to:
 }
 ```
 
-## Deleting Item
+## 删除数据
 
-Then proceed to execute the following code:
+然后继续执行下面的代码：
 
 ```go
 d.Delete("key2")
 ```
 
-JSON will finally become:
+JSON 数据会最终改变成：
 
 ```json
 {

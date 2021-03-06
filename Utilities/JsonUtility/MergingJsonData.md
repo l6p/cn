@@ -1,11 +1,11 @@
 ---
 sort: 5
-title: Merging JSON Data
+title: 合并 JSON 数据
 ---
 
-# Merging JSON Data
+# 合并 JSON 数据
 
-For example, there are two sets of JSON data and they are encapsulated in `d1` and `d2` respectively:
+例如在下面的示例中，我们用 `d1` 和 `d2` 分别封装了两组 JSON 数据：
 
 ```go
 d1 := json.D(`
@@ -25,15 +25,13 @@ d2 := json.D(`
 `)
 ```
 
-`d2` can be merged with `d1` using the following method:
+`d1` 可以使用下面的方法来合并 `d2` 的数据：
 
 ```go
 d1.Merge("", d2.GetJson(""))
 ```
 
-The first parameter of the `Merge` function is the position in `d1` where `d2` is merged, 
-and `""` indicates that the merge is performed at the root of `d1`.
+`Merge` 方法的第一个参数是在 `d1` 中合并 `d2` 数据的起始点。 `""` 表明从 `d1` 的根部开始合并 `d2` 的数据。
 
-`d2.GetJson("")` indicates that the data encapsulated in `d2` is converted to a JSON string.
-
-If the key in `d2` overlaps with the key in `d1`, the data in `d2` prevails.
+`d2.GetJson("")` 将以字符串的形式从 `d2` 根部返回其所封装的 JSON 数据。
+如果 `d2` 的键值与 `d1` 中的冲突，则 `d2` 的数据将覆盖 `d1` 中的数据。
