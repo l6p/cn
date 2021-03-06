@@ -1,19 +1,20 @@
 ---
 sort: 4
-title: SetUp And TearDown
+title: SetUp 和 TearDown
 ---
 
-# SetUp And TearDown
+# SetUp 和 TearDown
 
-Add **SetUp** and **TearDown** functions to the test script, and passes the references to the framework via the **Export** function.
+创建两个函数 **SetUp** 和 **TearDown**，分别用于定义在 **SetUp** 阶段和 **TearDown** 阶段需要执行的过程。
+并且把这两个函数的引用通过 **Export** 函数输出给框架。
 
 ```tip
-**setUp** and **tearDown** are reserved keywords for registering the SetUp and TearDown functions with the framework.
+在 **Export** 函数输出的 **map** 中的键值 `setUp` 和 `tearDown` 是**保留字**，不能用于输出测试用例。
 ```
 
-**SetUp** and **TearDown** will only be run once by a worker during the entire test, before the test starts and before it ends, respectively.
+**SetUp** 和 **TearDown** 函数只会在测试开始之前和完全结束之前被一个 Worker 节点运行一次。
 
-## Code example
+## 代码示例
 
 ```go
 package main
@@ -46,6 +47,6 @@ func Export() map[string]interface{} {
 }
 ```
 
-## Reference
+## 源代码参考
 
-* [An example of a test script with SetUp and TearDown](https://github.com/l6p/helm/tree/master/examples/setUp-and-tearDown){:target="_blank"}
+* [使用 SetUp 和 TearDown 的测试脚本](https://github.com/l6p/helm/tree/master/examples/setUp-and-tearDown){:target="_blank"}
