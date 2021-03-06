@@ -45,8 +45,8 @@ Lollipop提供独立的、基于Flink的数据分析模块提供实时数据统�
 
 ## 测试脚本指南
 
-- [Initializing The Script Project](/ScriptGuides/InitializingTheScriptProject.html)
-- [Creating Test Cases](/ScriptGuides/CreatingTestCases.html)
+- [初始化测试脚本](/cn/ScriptGuides/InitializingTheScriptProject.html)
+- [创建测试用例](/cn/ScriptGuides/CreatingTestCases.html)
 - [Getting JSON Data](/ScriptGuides/GettingJsonData.html)
 - [SetUp And TearDown](/ScriptGuides/SetUpAndTearDown.html)
 - [Using Context](/ScriptGuides/UsingContext.html)

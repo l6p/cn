@@ -1,23 +1,20 @@
 ---
 sort: 2
-title: Creating Test Cases
+title: 创建测试用例
 ---
 
-# Creating Test Cases
+# 创建测试用例
 
-In a test script project, you need to declare an `Export` function, 
-which is used to provide the necessary information for the test framework, 
-so the `Export` function is the interface between the test script and the framework.
+在测试脚本的文件中，您需要声明一个名叫 `Export` 的函数。
+这个函数用以向测试框架输出必要信息，所以 `Export` 函数可以被视为一个框架与测试脚本沟通的接口。
 
-The return value of the `Export` function is of type `map`, 
-and there are some reserved strings as the key of the map to play some special role.
+`Export` 函数的返回值必须是 `map` 类型，某些键的名称是作为**保留字**有特定的含义。
 
-In addition to the reserved strings, the **key** is the name of the test case output to the framework, 
-and the **value** is the function that executes the test case.
+除了保留字之外的其它的键的名称将被视为**测试用例的名称**，键所对应的值被视为该**测试用例的执行函数**。
 
-The following code example defines an empty test case and outputs it to the framework with the name `SimpleCase`.
+下面的代码定义了一个空的测试用例函数 `SimpleCase`，并且通过 `Export` 函数以 `SimpleCase` 作为测试用例的名称输出给测试框架。
 
-## Code example
+## 代码示例
 
 ```go
 func SimpleCase() {
@@ -30,7 +27,7 @@ func Export() map[string]interface{} {
 }
 ```
 
-## Reference
+## 源代码参考
 
-* [An example of a simple test script](https://github.com/l6p/helm/tree/master/examples/getting-json-data){:target="_blank"}
-* [An example of local debugging test script](https://github.com/l6p/helm/tree/master/examples/getting-json-data-with-local-debug){:target="_blank"}
+* [一个简单的测试脚本](https://github.com/l6p/helm/tree/master/examples/getting-json-data){:target="_blank"}
+* [测试脚本的本地 Debug](https://github.com/l6p/helm/tree/master/examples/getting-json-data-with-local-debug){:target="_blank"}

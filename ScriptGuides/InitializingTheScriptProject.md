@@ -1,16 +1,17 @@
 ---
 sort: 1
-title: Initializing The Script Project
+title: 初始化测试脚本
 ---
 
-# Initializing The Script Project
+# 初始化测试脚本
 
-Lollipop script is technically a Go module. Dedicated functions in the Go module can be exported to Lollipop as test cases. 
-So Lollipop is actually a framework by using K8s's resources to schedule and run functions in the Go module and providing 
-some conveniences in order to fulfill different test purposes.
+Lollipop 的测试脚本本质上是一个 Go module。可以将 Go module 中的指定函数输出给 Lollipop 作为测试用例使用。
+所以 Lollipop 可以理解为一个利用 K8s 平台资源编排并高效运行您创建的 Go module 中的指定函数的工具。
+同时 Lollipop 提供了方便的工具和报表，帮助您完成不同的测试目的。
 
-The first step to create a script is to create a new, empty directory, e.g., script. 
-Run `go mod init` in that directory to make the directory as the root of a Go module.
+创建测试脚本的第一步是，首先创建一个空的文件夹，例如名叫 `script`。
+
+在这个新创建的文件夹中运行 `go mod init` 命令，使其成为一个 Go module。
 
 ```shell
 mkdir script
@@ -18,7 +19,7 @@ cd script
 go mod init script
 ```
 
-Please make sure you are using **go 1.13**.
+请注意您要使用 **go 1.13** 版本。下面是通过 `go mod init` 命令创建的 `go.mod` 文件中的内容示例：
 
 ```go
 module script
