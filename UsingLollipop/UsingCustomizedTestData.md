@@ -1,17 +1,17 @@
 ---
 sort: 2
-title: Using Customized Test Data
+title: 使用自定义的测试数据
 ---
 
-# Using Customized Test Data
+# 使用自定义的测试数据
 
-For more flexibility in running tests, the system allows custom data to be passed into the test script.
+为了更加灵活的运行测试，Lollipop 提供了动态地把自定义参数注入到测试脚本中的功能。
 
-The first step is to define the fields in the **Context** where the data needs to be provided dynamically.
-You need to tag the custom fields, such as `l6p:"sleepSeconds"`.
+首先在**测试上下文**中定义用来接收动态参数的字段。您需要用 `l6p` 的标签来标注这些字段。
+例如在下面的示例中 `SleepSeconds` 这个字段是用于接收自定义参数的。
 
 ```tip
-Note that `l6p:"sync"` is reserved and cannot be used to pass data.
+注意 "sync" 是保留关键字，用于在 Worker 之间同步数据，不可用于标注字段。
 ```
 
 ```go
@@ -55,9 +55,8 @@ func Export() map[string]interface{} {
 }
 ```
 
-In the above example `SleepSeconds` is a custom field defined in the **Context**.
-When creating a test, the system prompts the user to assign a value to this field, 
-which currently only supports `int`, `string` and `float`.
+当创建性能测试时，系统如果发现测试脚本中有自定义参数，则会提供单独的对话窗口供您填写参数。
+当前参数只支持 `int`、 `string` 和 `float` 类型。
 
 <style>
     img[alt=pic00000002] { 
@@ -67,6 +66,6 @@ which currently only supports `int`, `string` and `float`.
 </style>
 ![pic00000002](/assets/images/pic00000002.png)
 
-## Reference
+## 进一步阅读
 
-* [Learn more about the test context](/ScriptGuides/UsingContext.html)
+* [关于测试上下文](/cn/ScriptGuides/UsingContext.html)
