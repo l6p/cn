@@ -1,9 +1,9 @@
 ---
 sort: 1
-title: Performance Test Cycle
+title: 性能测试周期
 ---
 
-# An Understanding Of A Complete Performance Test Cycle
+# 性能测试周期
 
 <style>
     img[alt=pic00000003] { 
@@ -13,18 +13,18 @@ title: Performance Test Cycle
 </style>
 ![pic00000003](/assets/images/pic00000003.png)
 
-A complete test cycle consists of four phases: **SetUp**, **WarmUp**, **Test** and **TearDown**.
+一个完成的测试周期包括：**SetUp**, **WarmUp**, **Test** and **TearDown** 四个阶段。
 
-The **SetUp** phase is executed before the test begins and is used to prepare the test environment.
+**SetUp** 是在测试开始之前的准备阶段，主要用于准备测试环境、初始化测试上下文等。
 
-In the **WarmUp** phase, the virtual users are started linearly, one by one, to gradually stress and warm up the system under test.
+**WarmUp** 是在正式测试开始之前为被测系统预热的阶段，虚拟用户在这个阶段中按照固定频率线性启动，逐步把系统压力增加到预期的水平。
 
-During the test phase, all the virtual users are run simultaneously, with each virtual user running the test cases as specified in the test plan.
-The execution of each virtual user is split into one or more sessions, and the framework allows specific scripts to be run at the beginning and end of a session to simulate certain periodic behaviors,
-such as logging in and out of a website.
+在正式测试阶段，所有的**虚拟用户**将同时开始工作，严格的按照测试计划中规定的测试用例及其比例来执行操作。
+每个**虚拟用户**在整个测试周期的执行过程被分为**一个或者多个会话周期**，系统保证了在每个会话周期的开始和结束用户都可以指定**虚拟用户**执行特定的步骤来模拟真实环境中的场景。
+比如模拟现实中网站用户的登入、登出场景。
 
-At the end of the test, all user sessions are guaranteed to end, and then the test enters the **TearDown** phase, which is used to free up some resources needed for the test.
+在测试阶段的最后，系统保证所有虚拟用户将被正常终止，然后系统进入 **TearDown** 阶段。该阶段主要用户释放测试所需的各种资源。
 
-## Reference
+## 进一步阅读
 
-* [Learn more about how to define the SetUp and TearDown actions in the test script](/ScriptGuides/SetUpAndTearDown.html)
+* [怎样在测试脚本中定义 SetUp 和 TearDown 的行为](/cn/ScriptGuides/SetUpAndTearDown.html)

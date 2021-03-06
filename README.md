@@ -38,12 +38,12 @@ Lollipop提供独立的、基于Flink的数据分析模块提供实时数据统�
 - [查看日志信息](/cn/UsingLollipop/ViewLogs.html)
 - [查看测试报告](/cn/UsingLollipop/ViewTestReports.html)
 
-## Testing Guides
+## 性能测试指南
 
-- [Performance Test Cycle](/TestingGuides/PerformanceTestCycle.html)
+- [性能测试周期](/cn/TestingGuides/PerformanceTestCycle.html)
 - [Rationalize The Number Of VUsers](/TestingGuides/RationalizeTheNumberOfVUsers.html)
 
-## Script Guides
+## 测试脚本指南
 
 - [Initializing The Script Project](/ScriptGuides/InitializingTheScriptProject.html)
 - [Creating Test Cases](/ScriptGuides/CreatingTestCases.html)
