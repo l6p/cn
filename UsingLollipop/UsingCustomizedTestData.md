@@ -66,6 +66,9 @@ func Export() map[string]interface{} {
 </style>
 ![pic00000002](/assets/images/pic00000002.png)
 
+从界面上输入的数值，例如给 `sleepSeconds` 赋值10秒，会在测试开始时自动注入到测试中。
+以上面的脚本为例，通过动态参数我们可以自由的选择 `SimpleCase` 这个测试用例在单个 Worker 上运行的时间间隔，从而防止给予被测系统太高的负载。
+
 ## 进一步阅读
 
 * [关于测试上下文](/cn/ScriptGuides/UsingContext.html)
