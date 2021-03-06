@@ -34,9 +34,9 @@ Lollipop提供独立的、基于Flink的数据分析模块提供实时数据统�
 ## 使用 Lollipop
 
 - [运行您的第一个测试](/cn/UsingLollipop/RunYourFirstTest.html)
-- [Using Customized Test Data](/UsingLollipop/UsingCustomizedTestData.html)
-- [View Logs](/UsingLollipop/ViewLogs.html)
-- [View Test Reports](/UsingLollipop/ViewTestReports.html)
+- [使用自定义的测试数据](/cn/UsingLollipop/UsingCustomizedTestData.html)
+- [查看日志信息](/cn/UsingLollipop/ViewLogs.html)
+- [查看测试报告](/cn/UsingLollipop/ViewTestReports.html)
 
 ## Testing Guides
 

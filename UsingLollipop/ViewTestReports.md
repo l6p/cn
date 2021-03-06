@@ -1,20 +1,20 @@
 ---
 sort: 4
-title: View Test Reports
+title: 查看测试报告
 ---
 
-# View Test Reports
+# 查看测试报告
 
-## The Overview Report
+## 综合测试报告
 
-The overview report reflects the main data that needs to be examined during the test execution, and is updated automatically during the test run.
+综合测试报告展示了本次性能测试的主要关键数据，并且报表可以随着测试过程自动更新。
+RPM（Requests per minute）反映了被测系统的在指定的压力下的平均每分钟的吞吐能力。
+RPM值高并且数值平稳，代表系统整体运行比较高效和稳定。
 
-Requests per minute (RPM) reflects the overall performance of the system, the higher the RPM value under heavy load, and the more stable it is, the better the performance of the system.
+## 详细测试报告
 
-## The Insight Report
+在详细测试报告中我们可以查看针对具体URL和具体测试用例的数据。
+可以查看每个URL和测试用例的请求数量，时间的消耗，请求失败的比例等等。
 
-The insight report reflects more specific test data. 
-You can view specific data such as the number of requests, time spent, percentage of failures, etc. for all the URLs accessed during the test. 
-
-The system provides a coefficient of variation (CV) to measure how trustworthy the statistics are, 
-a large coefficient of variation means that the system under test is not stable enough, and the data obtained from the test is not trustworthy.
+系统提供了一个**变异系数（CV）**的指标来反应性能测试数据的可靠性。比较大的 CV 表示底层数据抖动比较大，数据不够平稳，统计出的数据可靠性不高。 
+可能需要基于多轮测试来进行最终结果的总结。
