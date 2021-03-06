@@ -30,4 +30,4 @@ func Export() map[string]interface{} {
 ## 源代码参考
 
 * [一个简单的测试脚本](https://github.com/l6p/helm/tree/master/examples/getting-json-data){:target="_blank"}
-* [测试脚本的本地 Debug](https://github.com/l6p/helm/tree/master/examples/getting-json-data-with-local-debug){:target="_blank"}
+* [测试脚本的本地调试](https://github.com/l6p/helm/tree/master/examples/getting-json-data-with-local-debug){:target="_blank"}

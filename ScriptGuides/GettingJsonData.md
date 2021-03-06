@@ -1,12 +1,12 @@
 ---
 sort: 3
-title: Getting JSON Data
+title: 在测试用例中发送 API 请求
 ---
 
-# Getting JSON Data
+# 在测试用例中发送 API 请求
 
-In the following code example, the `SimpleCase` parameters `client` and `logger` are automatically injected by the test framework at runtime.
-Call `client.R().Get(...)` to make a GET request, and the returned JSON data is:
+在下面的代码示例中，`SimpleCase` 函数的参数 `client` 和 `logger` 是由测试框架自动注入，以便帮助您发送 API 请求和输出自定义日志信息。
+调用 `client.R().Get(...)` 来发送一个 **GET** 请求。假设该请求返回的 JSON 数据为：
 
 ```json
 {
@@ -17,18 +17,18 @@ Call `client.R().Get(...)` to make a GET request, and the returned JSON data is:
 }
 ```
 
-You can use `resp.D()` to extract the content of JSON data in the test case, for example, `GetInt(...)` for integers, `GetString(...)` for strings.
-The parameter of a function like `GetInt` or `GetString` is a path to the value's key.
+您可以在测试用例中使用 `resp.D()` 来获得该 JSON 数据，并且使用例如：`GetInt(...)` 获取整数值，`GetString(...)` 获取字符串值。
+`GetInt` 或 `GetString` 函数的入参为一个定位要获取值的所在位置的路径。
 
 ```tip
-`logger.Print(...)` is used to write custom messages in the log, unlike direct printing, `logger.Print(...)` will output the log information asynchronously as JSON format to improve performance.
+使用 `logger.Print(...)` 用于在测试用例中输出自定义日志，输出的内容会被异步地以 JSON 格式输出到 Worker 节点的日志中。
 ```
 
 ```tip
-`time.Sleep(...)` is used to reduce the frequency of test case execution and does not need to be added when actually performing performance tests.
+使用 `time.Sleep(...)` 的目的是在运行的时候减缓测试用例的执行频率。
 ```
 
-## Code example
+## 代码示例
 
 ```go
 import (
@@ -50,6 +50,6 @@ func Export() map[string]interface{} {
 }
 ```
 
-## Reference
+## 进一步阅读
 
-* [Learn more about how to write JSON path](/Utilities/JsonUtility/SendingJsonRequest.html)
+* [如何书写 JSON 路径](/cn/Utilities/JsonUtility/SendingJsonRequest.html)
