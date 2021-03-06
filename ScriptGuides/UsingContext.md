@@ -1,15 +1,14 @@
 ---
 sort: 5
-title: Using Context
+title: 使用测试上下文
 ---
 
-# Using Context In Testing
+# 使用测试上下文
 
-Use context to exchange data between test cases or use context to pass the dynamic data needed for testing.
+**测试上下文**可用于在测试用例之间传递数据和存放自定义参数。
 
-First declare a structure to hold the data in the context.
-For example, in the following example, a structure called `Context` is declared,
-and a field called `BaseUrl` is declared in it to store the base url of the back-end API.
+首先要在测试脚本中声明一个用于测试上下文使用的结构体。
+例如在下面的代码示例中，声明了一个命名为 `Context` 的结构体类型，并且在该类型中定义了一个字段叫 `BaseUrl` 用于存放请求的API的基础 URL。
 
 ```go
 type Context struct {
@@ -17,7 +16,7 @@ type Context struct {
 }
 ```
 
-Initialize the `Context` in the `Export` function, and export it to the test framework with the `context` key.
+在 **Export** 函数输出的 **map** 中的键值 `context` 是**保留字**，用于向系统输出测试上下文的初始值。
 
 ```go
 func Export() map[string]interface{} {
@@ -30,7 +29,7 @@ func Export() map[string]interface{} {
 }
 ```
 
-Using context in a test case simply requires defining a parameter of the `Context` pointer type on the test case:
+在测试用例的入参中声明一个为 `Context` 指针类型的参数，系统就会自动将测试上下文注入该参数：
 
 ```go
 func SimpleCase(ctx *Context, client *json.Client) {
@@ -39,9 +38,9 @@ func SimpleCase(ctx *Context, client *json.Client) {
 }
 ```
 
-In the above example the API base url will be taken from the `Context` instead of being hardcoded in the test case.
+在上面的代码片段中调用 API 的URL将基于测试上下文中保存的基础 URL 生成。
 
-## Code example
+## 代码示例
 
 ```go
 import (
@@ -69,8 +68,8 @@ func Export() map[string]interface{} {
 }
 ```
 
-## Reference
+## 源代码参考
 
-* [An example of a test script that uses Context](https://github.com/l6p/helm/tree/master/examples/simple-context){:target="_blank"}
-* [An example of synchronizing Context data](https://github.com/l6p/helm/tree/master/examples/sync-context){:target="_blank"}
-* [An example of using Context to pass parameters](https://github.com/l6p/helm/tree/master/examples/context-parameter){:target="_blank"}
+* [使用测试上下文的测试脚本](https://github.com/l6p/helm/tree/master/examples/simple-context){:target="_blank"}
+* [使用测试上下文在 Worker 节点间同步数据](https://github.com/l6p/helm/tree/master/examples/sync-context){:target="_blank"}
+* [使用测试上下文保存自定义参数](https://github.com/l6p/helm/tree/master/examples/context-parameter){:target="_blank"}

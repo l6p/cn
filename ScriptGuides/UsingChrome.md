@@ -1,30 +1,29 @@
 ---
 sort: 6
-title: Using Chrome
+title: 使用 Chrome 引擎
 ---
 
-# Using Chrome In Testing
+# 使用 Chrome 引擎
 
-Add a `*web.Client` type parameter to the test case function, 
-then the test framework will automatically inject the Web client for the test case to use.
+在测试用例的入参中声明一个为 `*web.Client` 类型的参数，系统就会自动将 Chrome Headless 引擎注入该参数。
 
-`web.Client` wraps [chromedp](https://github.com/chromedp/chromedp){:target="_blank"} to make it more convenient to use.
+`web.Client` 使用了 [chromedp](https://github.com/chromedp/chromedp){:target="_blank"} 项目并使其使用更加方便。
 
-`web.Client` initializes Chrome in Headless mode, which starts with the following parameters:
+`web.Client` 使用如下参数初始化了 Chrome Headless 引擎：
 
-| Parameter | Description |
+| 参数 | 描述 |
 | --------- | ----------- |
-| --disable-gpu | Disables GPU hardware acceleration. If software renderer is not in place, then the GPU process won't launch. |
-| --no-default-browser-check | Disables the default browser check. Useful for UI/browser tests where we want to avoid having the default browser info-bar displayed. |
-| --no-first-run | Skip First Run tasks, whether or not it's actually the First Run. Overridden by kForceFirstRun. This does not drop the First Run sentinel and thus doesn't prevent first run from occuring the next time chrome is launched without this flag. |
-| --no-sandbox | Disables the sandbox for all process types that are normally sandboxed. Meant to be used as a browser-level switch for testing purposes only. |
-| --headless | Run in headless mode, i.e., without a UI or display server dependencies. |
-| --hide-scrollbars | Hide scrollbars from screenshots. |
-| --mute-audio | Mutes audio sent to the audio device so it is not audible during automated testing. |
+| --disable-gpu | 禁用 GPU 硬件加速 |
+| --no-default-browser-check | 禁用默认浏览器检查 |
+| --no-first-run | 跳过浏览器第一次运行的任务 |
+| --no-sandbox | 禁用沙箱 |
+| --headless | 使用 Headless 模式运行 |
+| --hide-scrollbars | 在截屏中隐藏滚动条 |
+| --mute-audio | 静音 |
 
-Chrome's `window-size` and `user-agent` can be adjusted in the system, and the default window size is **1920 * 1080**.
+浏览器窗口的大小可以在 Web 管理平台中调整，默认为 **1920 * 1080**。
 
-## Code example
+## 代码示例
 
 ```go
 package main
@@ -55,7 +54,7 @@ func Export() map[string]interface{} {
 }
 ```
 
-## Reference
+## 源代码参考
 
-* [An example of a test script that uses Chrome](https://github.com/l6p/helm/tree/master/examples/using-chrome){:target="_blank"}
-* [An example of local debugging Chrome test script](https://github.com/l6p/helm/tree/master/examples/using-chrome-with-local-debug){:target="_blank"}
+* [使用 Chrome 引擎的测试脚本](https://github.com/l6p/helm/tree/master/examples/using-chrome){:target="_blank"}
+* [本地调试 Chrome 引擎的测试脚本](https://github.com/l6p/helm/tree/master/examples/using-chrome-with-local-debug){:target="_blank"}
