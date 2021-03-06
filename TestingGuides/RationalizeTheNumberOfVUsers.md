@@ -1,13 +1,12 @@
 ---
 sort: 2
-title: Rationalize The Number Of VUsers
+title: 合理化虚拟用户数
 ---
 
-# Rationalize The Number Of Virtual Users On Each Worker
+# 合理化虚拟用户数
 
-First the virtual users of each type will be evenly distributed across the worker nodes.
-
-The difference in the number of virtual users of each type on each worker node will not be greater than one.
+首先系统保证所有的虚拟用户将被均匀地分布到所有 Worker 节点上。
+并且每种类型的虚拟用户数在各各节点上的差值不会大于一。
 
 <style>
     img[alt=pic00000004] { 
@@ -17,9 +16,8 @@ The difference in the number of virtual users of each type on each worker node w
 </style>
 ![pic00000004](/assets/images/pic00000004.png)
 
-This has the advantage that the test cases executed and the system resources used by each worker will be relatively similar, with low variance between workers.
+这样做的好处是，对于每个 Worker 节点它所消耗的系统资源和执行的测试用例都会尽可能的接近，从而避免不同 Worker 节点在测试运行时的行为差异。
 
-Each worker is a Pod of Kubernetes, and all virtual users on a worker will share that worker's CPU and Memory resources in a threaded fashion.
+每一个 Worker 节点实际上是一个 K8s 的 Pod，所有的虚拟用户在 Worker 节点上将以轻线程模式共享该 Pod 的 CPU 和内存。
 
-The total number of virtual users must be an integer multiple of the number of workers, and for the number of virtual users, the more workers will consume more system resources, 
-but also the more stress will be placed on the system under test.
+所有虚拟用户数的总数必须为所有 Worker 节点数的整倍数。对于相同的虚拟用户数，更多的 Worker 节点意味着将会占用更多的系统资源，但是也会给被测系统产生更大的压力。

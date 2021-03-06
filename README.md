@@ -41,7 +41,7 @@ Lollipop提供独立的、基于Flink的数据分析模块提供实时数据统�
 ## 性能测试指南
 
 - [性能测试周期](/cn/TestingGuides/PerformanceTestCycle.html)
-- [Rationalize The Number Of VUsers](/TestingGuides/RationalizeTheNumberOfVUsers.html)
+- [合理化虚拟用户数](/cn/TestingGuides/RationalizeTheNumberOfVUsers.html)
 
 ## 测试脚本指南
 
