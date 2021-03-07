@@ -10,4 +10,4 @@ sort: 7
 
 邮箱：l6p.io@hotmail.com
 
-YouTube 频道：https://www.youtube.com/channel/UCn8LPSaq4jjpkKkexTCeTJg
+YouTube 频道：[https://www.youtube.com/channel/UCn8LPSaq4jjpkKkexTCeTJg](https://www.youtube.com/channel/UCn8LPSaq4jjpkKkexTCeTJg){:target="_blank"}

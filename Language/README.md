@@ -1,7 +1,5 @@
 ---
 sort: 1
+title: 切换英文
+redirect_to: 'https://l6p.github.io/'
 ---
-
-# 帮助语言
-
-{% include list.liquid all=true %}
