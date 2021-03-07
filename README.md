@@ -54,4 +54,6 @@ Lollipop提供独立的、基于Flink的数据分析模块提供实时数据统�
 
 ## 工具库
 
-- [JSON 工具](/cn/Utilities/JsonUtility)
+- [JSON 工具](/cn/Utilities/JsonUtility/)
+
+## [联系方式](/cn/Contact/)
