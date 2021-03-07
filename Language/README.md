@@ -1,7 +1,7 @@
 ---
 sort: 1
-title: 切换英文
+title: English Help
 redirect_to: 'https://l6p.github.io/'
 ---
 
-# 切换英文
+# English Help
